@@ -41,7 +41,7 @@ SALES_COUNT_FILE_NAME='sales_count.txt'
 AUTHOR_PAGE = 'https://codecanyon.net/user/author_user_name'
 ```
 
-### Run script 
+### Run script to verify 
 
 ```
 python notify.py 
