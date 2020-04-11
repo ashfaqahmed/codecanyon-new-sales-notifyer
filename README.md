@@ -47,7 +47,7 @@ AUTHOR_PAGE = 'https://codecanyon.net/user/author_user_name'
 python notify.py 
 ```
 
-#### Add to cron job on server
+### Add to cron job on server
 
 Make the script executable by:
 ```
