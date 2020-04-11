@@ -1,7 +1,7 @@
 # Codecanyon Sales Email Notifyer
-Simple Python3 script to get notifications by email for any new sales made on codecanyon account.
+Simple Python3 script to get notifications by email for any new sales made on your codecanyon account.
 
-I built this for personal use because i never get any new sales notification by codecanyon, i am not sure why but i have 3 accounts and i never received any sale email from them.
+I built this for personal use because i never got any new sales notification by codecanyon, i am not sure why but i have 3 accounts and i never received any sales email from them.
 
 ### Requirements
 
