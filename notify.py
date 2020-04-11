@@ -55,7 +55,11 @@ def get_previous_sale_count():
 def get_sales_count(html):
     previous_sale_count = get_previous_sale_count()
     soup = BeautifulSoup(html, 'html.parser')
-    stats = soup.find_all("div", {"class": "user-info-header__stats-content"})[1].find("strong")
+    stats_get = soup.find_all("div", {"class": "user-info-header__stats-content"})
+    stats = None
+    for tags in stats_get:
+        if tags.find("strong") is not None:
+            stats = tags
     if stats is not None:
         sales_number = stats.text.strip()
         if sales_number != '':
