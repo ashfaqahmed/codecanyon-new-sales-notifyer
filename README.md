@@ -1,65 +1,105 @@
-# Codecanyon Sales Email Notifyer
-Simple Python3 script to get notifications by email for any new sales made on your codecanyon account.
+# Codecanyon Sales Email Notifier
 
-I built this for personal use because i never got any new sales notification by codecanyon, i am not sure why but i have 3 accounts and i never received any sales email from them.
+A lightweight Python script that automatically notifies you via email when you make new sales on your Codecanyon account. This tool solves the common issue of not receiving timely sales notifications from Codecanyon.
 
-### Requirements
+## ✨ Features
 
-- Sendgrid API key (to send email)
-- Python3
+- Real-time email notifications for new sales
+- Configurable notification settings
+- Daily sales summary option
+- Simple setup and configuration
+- Lightweight and efficient
+- Works with any Codecanyon author account
 
-### Installation 
+## 🛠️ Requirements
 
+- Python 3.x
+- SendGrid API key (for sending emails)
+- Codecanyon author account
+
+## 📦 Installation
+
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/codecanyon-new-sales-notifyer.git
+cd codecanyon-new-sales-notifyer
 ```
-pip install requests 
-pip install sendgrid 
-pip install python-dotenv 
-pip install beautifulsoup4
+
+2. Install required dependencies:
+```bash
+pip install requests sendgrid python-dotenv beautifulsoup4
 ```
 
-### Update .env config 
+## ⚙️ Configuration
 
-```
-# your sendgrid API with permission send email
-SENDGRID_API_KEY=''
+Create a `.env` file in the project root with the following configuration:
 
-# from email address, subject line and notification receiver email
+```env
+# SendGrid API key (with email sending permissions)
+SENDGRID_API_KEY='your_sendgrid_api_key'
 
-FROM_EMAIL='info@mydomain.com'
-EMAIL_SUBJECT='Codecanyon Sales Notifcation'
-SEND_EMAIL_TO='myemail@mydomain.com'
+# Email configuration
+FROM_EMAIL='your@email.com'
+EMAIL_SUBJECT='Codecanyon Sales Notification'
+SEND_EMAIL_TO='recipient@email.com'
 
-# 0 to receive daily notifications (time is based on the cron-job you will set)
-# 1 to receive only when there is new sale
+# Notification settings
+# 0 = Daily notifications (based on cron job timing)
+# 1 = Only when new sales occur
 NOTIFY_ONLY_NEW_SALE=1
 
-
-# file name to store fetched sale number only
+# Storage configuration
 SALES_COUNT_FILE_NAME='sales_count.txt'
 
-# Codecanyon Author page url (author username)
-AUTHOR_PAGE = 'https://codecanyon.net/user/author_user_name'
+# Your Codecanyon author page URL
+AUTHOR_PAGE='https://codecanyon.net/user/your_username'
 ```
 
-### Run script to verify 
+## 🚀 Usage
 
-```
-python notify.py 
-```
-
-### Add cron job on server
-
-Make the script executable by:
-```
-chmod u+x /path/to/notify.py 
-```
-Open your cron table by:
-```
-crontab -e 
-```
-Add the following cron entry: (24 hours)
-```
-0 */24 * * * /path/to/notify.py 
+1. Test the script:
+```bash
+python notify.py
 ```
 
-That's it :)
+2. Set up automated checking using cron:
+```bash
+# Make the script executable
+chmod u+x /path/to/notify.py
+
+# Add to crontab (check every 24 hours)
+0 */24 * * * /path/to/notify.py
+```
+
+## 🔧 How It Works
+
+1. The script checks your Codecanyon author page for the current sales count
+2. Compares it with the previously recorded count
+3. Sends an email notification if new sales are detected
+4. Updates the local sales count file
+
+## 📝 Notes
+
+- The script uses SendGrid for email delivery
+- Sales count is stored locally in a text file
+- You can configure the notification frequency through cron
+- The script is lightweight and can run on any server
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## ☕ Support My Work
+
+If this tool saved you time or effort, consider buying me a coffee.  
+Your support helps me keep building and maintaining open-source projects like this!
+
+You can either scan the QR code below or click the link to tip me:
+
+👉 [**buymeacoffee.com/ashfaqueali**](https://buymeacoffee.com/ashfaqueali)
+
+<img src="https://ashfaqsolangi.com/images/bmc_qr.png" alt="Buy Me a Coffee QR" width="220" height="220" />
